@@ -13,7 +13,8 @@ jobs:
         uses: actions/checkout@v4
       - name: build image
         run: docker build . -t idkjoa/docker-webhook
+          
       - name: push image to docker hub
         run: |
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-          docker push IdkJoa/hello-world:latest
+          docker push idkjoa/hello-world:latest
